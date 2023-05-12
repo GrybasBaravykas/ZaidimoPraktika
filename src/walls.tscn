@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cclw4hsadd8lf"]
+
+[ext_resource type="Script" path="res://src/wall.gd" id="1_3yaem"]
+[ext_resource type="Texture2D" uid="uid://85amr08e0d56" path="res://assets/background.png" id="2_5giuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bn0v"]
+size = Vector2(100, 709)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjjm2"]
+size = Vector2(77, 229)
+
+[node name="walls" type="Node2D"]
+position = Vector2(205, 458)
+metadata/_edit_horizontal_guides_ = [-119.0]
+metadata/_edit_vertical_guides_ = [-23.0, 39.0]
+
+[node name="wall" type="StaticBody2D" parent="."]
+script = ExtResource("1_3yaem")
+
+[node name="upperwall" type="Sprite2D" parent="wall"]
+position = Vector2(0, -458)
+scale = Vector2(0.0520833, 0.656482)
+texture = ExtResource("2_5giuq")
+
+[node name="uppercoll" type="CollisionShape2D" parent="wall"]
+position = Vector2(0, -458)
+shape = SubResource("RectangleShape2D_4bn0v")
+
+[node name="lowerwall" type="Sprite2D" parent="wall"]
+position = Vector2(1.27157e-06, 458)
+scale = Vector2(0.0520833, 0.656482)
+texture = ExtResource("2_5giuq")
+
+[node name="lowercoll" type="CollisionShape2D" parent="wall"]
+position = Vector2(0, 458)
+shape = SubResource("RectangleShape2D_4bn0v")
+
+[node name="pointarea" type="Area2D" parent="wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall/pointarea"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_mjjm2")
