@@ -47,3 +47,8 @@ func _on_detect_body_entered(body: Node2D) -> void:
 	if body.name == "wall":
 		get_tree().reload_current_scene()
 	
+
+
+
+func _on_lowerdetect_area_entered(area: Area2D) -> void:
+	get_tree().reload_current_scene()
