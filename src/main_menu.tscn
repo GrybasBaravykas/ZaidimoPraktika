@@ -50,11 +50,55 @@ text = "pradžia"
 layout_mode = 2
 text = "parduotuvė"
 
+[node name="Generation" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Generation"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Generation/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Generation/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "generacija"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonGen" type="Button" parent="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "sugeneruoti nauja zemelapi"
+
+[node name="ButtonStart" type="Button" parent="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "pradžia"
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1168.0
 offset_bottom = 658.0
 color = Color(0.145098, 0.447059, 0.329412, 1)
 
-[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonShop" to="CanvasLayer" method="_on_button_shop_pressed"]
+[connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen" to="CanvasLayer" method="_on_button_gen_pressed"]
+[connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonStart" to="CanvasLayer" method="_on_button_start_pressed"]
