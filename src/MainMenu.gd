@@ -9,6 +9,7 @@ var my_json: Json
 
 func _ready():
 	my_json = Json.new()
+	my_json.load_file2()
 
 func _on_button_play_pressed() -> void:
 	main.visible = false
