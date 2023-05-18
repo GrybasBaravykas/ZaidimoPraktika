@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bar0yehnxllc4"]
+[gd_scene load_steps=11 format=3 uid="uid://bar0yehnxllc4"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_maurd"]
 [ext_resource type="Texture2D" uid="uid://bm6p2aqbg7vbw" path="res://assets/player.png" id="2_yh00c"]
@@ -20,12 +20,6 @@ size = Vector2(100, 709)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mjjm2"]
 size = Vector2(77, 229)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2olx5"]
-size = Vector2(959, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dsw0"]
-size = Vector2(970, 25)
 
 [node name="world" type="Node2D"]
 position = Vector2(-128, -336)
@@ -234,21 +228,6 @@ shape = SubResource("RectangleShape2D_mjjm2")
 position = Vector2(496, 328)
 zoom = Vector2(1.19, 1.19)
 
-[node name="lowerdetect" type="Area2D" parent="."]
-position = Vector2(120, 313)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lowerdetect"]
-position = Vector2(373, 378)
-shape = SubResource("RectangleShape2D_2olx5")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(131, 161)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(366, -140)
-shape = SubResource("RectangleShape2D_1dsw0")
-
 [connection signal="area_entered" from="player/detect" to="player" method="_on_detect_area_entered"]
 [connection signal="body_entered" from="player/detect" to="player" method="_on_detect_body_entered"]
 [connection signal="body_entered" from="player/resseter" to="player" method="_on_resseter_body_entered"]
-[connection signal="area_entered" from="lowerdetect" to="player" method="_on_lowerdetect_area_entered"]
