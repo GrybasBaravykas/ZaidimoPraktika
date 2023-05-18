@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp46km77xuj4a"]
+[gd_scene load_steps=2 format=3 uid="uid://drqk4w4jv5des"]
 
 [ext_resource type="Script" path="res://src/MainMenu.gd" id="1_vkr01"]
 
@@ -156,6 +156,5 @@ color = Color(0.145098, 0.447059, 0.329412, 1)
 [connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGenMenu" to="CanvasLayer" method="_on_button_gen_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonStart" to="CanvasLayer" method="_on_button_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen" to="CanvasLayer" method="_on_button_gen_pressed"]
-[connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen2" to="CanvasLayer" method="_on_button_gen_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen2" to="CanvasLayer" method="_on_button_gen_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonAtgal" to="CanvasLayer" method="_on_button_atgal_pressed"]
