@@ -15,8 +15,8 @@ func _on_button_play_pressed() -> void:
 
 
 func _on_button_shop_pressed() -> void:
-	get_tree().change_scene_to_file("res://src/shop.tscn")
-
+	#get_tree().change_scene_to_file("res")
+	pass
 
 
 func _on_button_gen_pressed() -> void:
@@ -24,4 +24,5 @@ func _on_button_gen_pressed() -> void:
 
 
 func _on_button_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://src/world.tscn")
+	if(FileAccess.file_exists(my_json.path)):
+		get_tree().change_scene_to_file("res://src/world.tscn")
