@@ -35,8 +35,10 @@ func _on_resseter_body_entered(body: Node2D) -> void:
 	if body.name == "wall" :
 		body.queue_free()
 		if(score == 7 * my_json.data.difficulty + 4):
-			game_over()
 			my_json.data2.win+=1
+			my_json.create_file2()
+			game_over()
+			
 
 
 func _on_detect_area_entered(area: Area2D) -> void:
@@ -55,5 +57,7 @@ func _on_lowerdetect_area_entered(area: Area2D) -> void:
 	game_over()
 
 func game_over():
-	get_tree().change_scene_to_file("res://src/game_over_screen.tscn")
 	my_json.data2.loss += 1 
+	my_json.create_file2()
+	get_tree().change_scene_to_file("res://src/game_over_screen.tscn")
+	
