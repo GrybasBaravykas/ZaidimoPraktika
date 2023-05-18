@@ -10,6 +10,19 @@ func _on_button_back_pressed() -> void:
 	pass
 
 
+var store = {
+			'bought' : [true, false, false],
+			'selected' : 0,
+}
+
+var save_store_path = 'user://save'
+
+
+
+
+
+
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,9 +30,4 @@ func _process(delta):
 	pass
 
 
-func _on_button_to_get_original_skin_pressed():
-	pass # Replace with function body.
 
-
-func _on_button_to_buy_litning_skin_pressed():
-	pass # Replace with function body.
