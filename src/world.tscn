@@ -1,10 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bar0yehnxllc4"]
+[gd_scene load_steps=8 format=3 uid="uid://bar0yehnxllc4"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_maurd"]
 [ext_resource type="Texture2D" uid="uid://bm6p2aqbg7vbw" path="res://assets/player.png" id="2_yh00c"]
-[ext_resource type="Script" path="res://src/wall.gd" id="3_ebnyh"]
-[ext_resource type="Script" path="res://src/walls.gd" id="3_wprvy"]
-[ext_resource type="Texture2D" uid="uid://85amr08e0d56" path="res://assets/background.png" id="4_db1lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivrmb"]
 size = Vector2(88, 84)
@@ -15,11 +12,11 @@ size = Vector2(91.5, 92)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqitf"]
 size = Vector2(58, 984)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bn0v"]
-size = Vector2(100, 709)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1jgi"]
+size = Vector2(972.5, 27)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjjm2"]
-size = Vector2(77, 229)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crpwv"]
+size = Vector2(973, 20)
 
 [node name="world" type="Node2D"]
 position = Vector2(-128, -336)
@@ -58,176 +55,23 @@ position = Vector2(272, -48)
 position = Vector2(-520, 24)
 shape = SubResource("RectangleShape2D_nqitf")
 
-[node name="walls" type="Node2D" parent="."]
-position = Vector2(408, 472)
-script = ExtResource("3_wprvy")
-metadata/_edit_horizontal_guides_ = [-119.0]
-metadata/_edit_vertical_guides_ = [-23.0, 39.0]
-metadata/_edit_group_ = true
-
-[node name="wall" type="StaticBody2D" parent="walls"]
-script = ExtResource("3_ebnyh")
-
-[node name="upperwall" type="Sprite2D" parent="walls/wall"]
-position = Vector2(0, -480)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="uppercoll" type="CollisionShape2D" parent="walls/wall"]
-position = Vector2(0, -480)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="lowerwall" type="Sprite2D" parent="walls/wall"]
-position = Vector2(1.27157e-06, 458)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="lowercoll" type="CollisionShape2D" parent="walls/wall"]
-position = Vector2(0, 458)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="pointarea" type="Area2D" parent="walls/wall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall/pointarea"]
-position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_mjjm2")
-
-[node name="walls2" type="Node2D" parent="."]
-position = Vector2(656, 312)
-metadata/_edit_horizontal_guides_ = [-119.0]
-metadata/_edit_vertical_guides_ = [-23.0, 39.0]
-metadata/_edit_group_ = true
-
-[node name="wall" type="StaticBody2D" parent="walls2"]
-script = ExtResource("3_ebnyh")
-
-[node name="upperwall" type="Sprite2D" parent="walls2/wall"]
-position = Vector2(0, -480)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="uppercoll" type="CollisionShape2D" parent="walls2/wall"]
-position = Vector2(0, -480)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="lowerwall" type="Sprite2D" parent="walls2/wall"]
-position = Vector2(1.27157e-06, 458)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="lowercoll" type="CollisionShape2D" parent="walls2/wall"]
-position = Vector2(0, 458)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="pointarea" type="Area2D" parent="walls2/wall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls2/wall/pointarea"]
-position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_mjjm2")
-
-[node name="walls3" type="Node2D" parent="."]
-position = Vector2(912, 440)
-metadata/_edit_horizontal_guides_ = [-119.0]
-metadata/_edit_vertical_guides_ = [-23.0, 39.0]
-metadata/_edit_group_ = true
-
-[node name="wall" type="StaticBody2D" parent="walls3"]
-script = ExtResource("3_ebnyh")
-
-[node name="upperwall" type="Sprite2D" parent="walls3/wall"]
-position = Vector2(0, -480)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="uppercoll" type="CollisionShape2D" parent="walls3/wall"]
-position = Vector2(0, -480)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="lowerwall" type="Sprite2D" parent="walls3/wall"]
-position = Vector2(1.27157e-06, 458)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="lowercoll" type="CollisionShape2D" parent="walls3/wall"]
-position = Vector2(0, 458)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="pointarea" type="Area2D" parent="walls3/wall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls3/wall/pointarea"]
-position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_mjjm2")
-
-[node name="walls4" type="Node2D" parent="."]
-position = Vector2(1160, 264)
-metadata/_edit_horizontal_guides_ = [-119.0]
-metadata/_edit_vertical_guides_ = [-23.0, 39.0]
-metadata/_edit_group_ = true
-
-[node name="wall" type="StaticBody2D" parent="walls4"]
-script = ExtResource("3_ebnyh")
-
-[node name="upperwall" type="Sprite2D" parent="walls4/wall"]
-position = Vector2(0, -480)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="uppercoll" type="CollisionShape2D" parent="walls4/wall"]
-position = Vector2(0, -480)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="lowerwall" type="Sprite2D" parent="walls4/wall"]
-position = Vector2(1.27157e-06, 458)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="lowercoll" type="CollisionShape2D" parent="walls4/wall"]
-position = Vector2(0, 458)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="pointarea" type="Area2D" parent="walls4/wall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls4/wall/pointarea"]
-position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_mjjm2")
-
-[node name="walls5" type="Node2D" parent="."]
-position = Vector2(1416, 480)
-metadata/_edit_horizontal_guides_ = [-119.0]
-metadata/_edit_vertical_guides_ = [-23.0, 39.0]
-metadata/_edit_group_ = true
-
-[node name="wall" type="StaticBody2D" parent="walls5"]
-script = ExtResource("3_ebnyh")
-
-[node name="upperwall" type="Sprite2D" parent="walls5/wall"]
-position = Vector2(0, -480)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="uppercoll" type="CollisionShape2D" parent="walls5/wall"]
-position = Vector2(0, -480)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="lowerwall" type="Sprite2D" parent="walls5/wall"]
-position = Vector2(1.27157e-06, 458)
-scale = Vector2(0.0520833, 0.656482)
-texture = ExtResource("4_db1lh")
-
-[node name="lowercoll" type="CollisionShape2D" parent="walls5/wall"]
-position = Vector2(0, 458)
-shape = SubResource("RectangleShape2D_4bn0v")
-
-[node name="pointarea" type="Area2D" parent="walls5/wall"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="walls5/wall/pointarea"]
-position = Vector2(-0.5, -10.5)
-shape = SubResource("RectangleShape2D_mjjm2")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(496, 328)
 zoom = Vector2(1.19, 1.19)
 
+[node name="lowerdetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lowerdetect"]
+position = Vector2(496.75, 666)
+shape = SubResource("RectangleShape2D_d1jgi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(496.5, 0)
+shape = SubResource("RectangleShape2D_crpwv")
+
 [connection signal="area_entered" from="player/detect" to="player" method="_on_detect_area_entered"]
 [connection signal="body_entered" from="player/detect" to="player" method="_on_detect_body_entered"]
 [connection signal="body_entered" from="player/resseter" to="player" method="_on_resseter_body_entered"]
+[connection signal="area_entered" from="lowerdetect" to="player" method="_on_lowerdetect_area_entered"]
