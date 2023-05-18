@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bragrvpaspihy"]
 
-[ext_resource type="Texture2D" uid="uid://ded8bty573qsn" path="res://assets/backgroundMainMenu.jpg" id="1_50flo"]
 [ext_resource type="Script" path="res://src/shop.gd" id="1_eurvc"]
+[ext_resource type="Texture2D" uid="uid://85amr08e0d56" path="res://assets/background.png" id="2_amtwr"]
 [ext_resource type="Texture2D" uid="uid://bm6p2aqbg7vbw" path="res://assets/player.png" id="2_w30va"]
 [ext_resource type="Texture2D" uid="uid://bkxe2xh5v5dw3" path="res://assets/player3.png" id="2_wf08a"]
 [ext_resource type="Texture2D" uid="uid://ce38v8r3q06uy" path="res://assets/player2.png" id="3_1cyeb"]
@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_50flo")
+texture = ExtResource("2_amtwr")
 expand_mode = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
