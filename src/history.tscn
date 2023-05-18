@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b081wfptyqpmg"]
+[gd_scene load_steps=2 format=3 uid="uid://csrp0ua6tjuo7"]
 
 [ext_resource type="Script" path="res://history_menu.gd" id="1_mmvyr"]
 
@@ -18,7 +18,28 @@ offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "bandymas
-"
+text = "Deaths"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "jumps"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "gold"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "exp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "wins"
 horizontal_alignment = 1
 vertical_alignment = 1
