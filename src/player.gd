@@ -45,6 +45,7 @@ func _on_detect_area_entered(area: Area2D) -> void:
 	if area.name == "pointarea":
 		score += 1
 		my_json.data2.exp += 10
+		my_json.create_file2()
 
 
 func _on_detect_body_entered(body: Node2D) -> void:
