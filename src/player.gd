@@ -13,8 +13,13 @@ var wall_pos
 func _ready():
 	my_json = Json.new()
 	my_json.load_file()
-	print(my_json.data.map_seed)
-	print(my_json.take_gen_val())
+	#print(my_json.data.map_seed)
+	for i in 7 * my_json.data.difficulty:
+		var Wall_instance = Wall.instantiate()
+		wall_pos = my_json.take_gen_val()
+		print(wall_pos)
+		Wall_instance.position = Vector2(400 + i * 400,170 + wall_pos * 35)
+		get_parent().call_deferred("add_child",Wall_instance) 
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
@@ -25,19 +30,10 @@ func _physics_process(delta: float) -> void:
 	
 	get_parent().get_node("CanvasLayer/RichTextLabel").text = str(score)
 
-func Wall_reset():  
-	var Wall_instance = Wall.instantiate()
-	wall_pos = my_json.take_gen_val()
-	print(wall_pos)
-	Wall_instance.position = Vector2(1300,170 + wall_pos * 35)
-	get_parent().call_deferred("add_child",Wall_instance) 
-
 
 func _on_resseter_body_entered(body: Node2D) -> void:
 	if body.name == "wall" :
 		body.queue_free()
-		if(score < 7 * my_json.data.difficulty):
-			Wall_reset() 
 		if(score == 7 * my_json.data.difficulty + 4):
 			game_over()
 			my_json.data2.win+=1

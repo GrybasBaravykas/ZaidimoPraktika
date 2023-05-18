@@ -12,7 +12,9 @@ var default_data2 = {
 	"exp" : 1,
 	"wins" : 0,
 	"loss" : 0,
-	"jumps" : 0
+	"jumps" : 0,
+	"skin1" : 0,
+	"skin2": 0
 }
 
 var data2 = default_data2
@@ -34,9 +36,15 @@ func load_file():
 	pos_val = data.map_seed
 
 func load_file2():
+	if not (FileAccess.file_exists(path2)):
+		create_file2()
 	var file = FileAccess.open(path2, FileAccess.READ)
 	data = file.get_as_text()
 	data = JSON.parse_string(data2)
+	
+func reset_data():
+	data2 = default_data2
+	create_file2()
 	
 func gen_map(diff):
 	data.difficulty = diff
