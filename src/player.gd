@@ -12,6 +12,7 @@ var my_json: Json
 func _ready():
 	my_json = Json.new()
 	my_json.load_file()
+	print(my_json.data.map_seed)
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
@@ -33,8 +34,10 @@ func Wall_reset():
 func _on_resseter_body_entered(body: Node2D) -> void:
 	if body.name == "wall" :
 		body.queue_free()
-		Wall_reset() 
- 
+		if(score < 13):
+			Wall_reset() 
+		if(score == 17):
+			game_over()
 
 
 func _on_detect_area_entered(area: Area2D) -> void:
@@ -44,10 +47,12 @@ func _on_detect_area_entered(area: Area2D) -> void:
 
 func _on_detect_body_entered(body: Node2D) -> void:
 	if body.name == "wall":
-		get_tree().change_scene_to_file("res://src/game_over_screen.tscn")
+		pass
+		#game_over()
 	
 
-
-
 func _on_lowerdetect_area_entered(area: Area2D) -> void:
+	game_over()
+
+func game_over():
 	get_tree().change_scene_to_file("res://src/game_over_screen.tscn")

@@ -19,10 +19,11 @@ func load_file():
 	pos_val = data.map_seed
 	
 
-func gen_map():
-	data.map_seed = randi() % 9 + 1;
-	for i in 13:
-		data.map_seed = data.map_seed * 10 + randi() % 10 
+func gen_map(diff):
+	data.difficulty = diff
+	data.map_seed = randi() % 9 + 1
+	for i in 13 * diff:
+		data.map_seed = data.map_seed * 10 + (randi() % 10)
 		
 	create_file()	
 func take_gen_val():
