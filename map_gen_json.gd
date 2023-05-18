@@ -41,7 +41,7 @@ func load_file2():
 func gen_map(diff):
 	data.difficulty = diff
 	data.map_seed = randi() % 9 + 1
-	for i in 13 * diff:
+	for i in 7 * diff:
 		data.map_seed = data.map_seed * 10 + (randi() % 10)
 		
 	create_file()	

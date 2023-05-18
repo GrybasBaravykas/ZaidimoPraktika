@@ -156,6 +156,5 @@ color = Color(0.145098, 0.447059, 0.329412, 1)
 [connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGenMenu" to="CanvasLayer" method="_on_button_gen_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonStart" to="CanvasLayer" method="_on_button_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen" to="CanvasLayer" method="_on_button_gen_pressed"]
-[connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen2" to="CanvasLayer" method="_on_button_gen_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonGen2" to="CanvasLayer" method="_on_button_gen_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Generation2/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonAtgal" to="CanvasLayer" method="_on_button_atgal_pressed"]

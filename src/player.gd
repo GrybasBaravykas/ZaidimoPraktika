@@ -7,12 +7,14 @@ var score = 0
 
 const Json = preload("res://map_gen_json.gd")
 var my_json: Json
+var wall_pos
 
 
 func _ready():
 	my_json = Json.new()
 	my_json.load_file()
-	#print(my_json.data.map_seed)
+	print(my_json.data.map_seed)
+	print(my_json.take_gen_val())
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
@@ -25,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 func Wall_reset():  
 	var Wall_instance = Wall.instantiate()
-	var wall_pos = my_json.take_gen_val()
+	wall_pos = my_json.take_gen_val()
 	print(wall_pos)
 	Wall_instance.position = Vector2(1300,170 + wall_pos * 35)
 	get_parent().call_deferred("add_child",Wall_instance) 
@@ -34,9 +36,9 @@ func Wall_reset():
 func _on_resseter_body_entered(body: Node2D) -> void:
 	if body.name == "wall" :
 		body.queue_free()
-		if(score < 13):
+		if(score < 7 * my_json.data.difficulty):
 			Wall_reset() 
-		if(score == 17):
+		if(score == 7 * my_json.data.difficulty + 4):
 			game_over()
 			my_json.data2.win+=1
 
@@ -58,4 +60,4 @@ func _on_lowerdetect_area_entered(area: Area2D) -> void:
 
 func game_over():
 	get_tree().change_scene_to_file("res://src/game_over_screen.tscn")
-	my_json.data2.death += 1
+	my_json.data2.loss += 1 
