@@ -55,7 +55,7 @@ vertical_alignment = 1
 
 [node name="Button_to_get_original_skin" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Buy"
+text = "Use"
 icon = ExtResource("2_w30va")
 
 [node name="Button_to_buy_litning_skin" type="Button" parent="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -73,4 +73,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "<-Back"
 
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button_to_get_original_skin" to="." method="_on_button_to_get_original_skin_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button_to_buy_litning_skin" to="." method="_on_button_to_buy_litning_skin_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button_to_buy_lithuanian_skin" to="." method="_on_button_to_buy_lithuanian_skin_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Button_to_get_to_main_menu" to="." method="_on_button_back_pressed"]

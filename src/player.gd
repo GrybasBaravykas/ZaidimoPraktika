@@ -11,8 +11,9 @@ var my_json: Json
 var wall_pos
 
 var textures = [
-			'res://assets/player2.png',
+			'res://assets/player.png',
 			'res://assets/player3.png',
+			'res://assets/player2.png',
 ]
 
 
@@ -20,7 +21,7 @@ func _ready():
 	my_json = Json.new()
 	my_json.load_file()
 	#print(my_json.data.map_seed)
-	$Player.texture = load(textures[1])
+	$Player.texture = load(textures[Shop.store.selected])
 	for i in 7 * my_json.data.difficulty:
 		var Wall_instance = Wall.instantiate()
 		wall_pos = my_json.take_gen_val()
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity 
 	move_and_collide(velocity * delta)
 	
-	get_parent().get_node("CanvasLayer/RichTextLabel").text = str(score)
+	
 
 
 func _on_resseter_body_entered(body: Node2D) -> void:
