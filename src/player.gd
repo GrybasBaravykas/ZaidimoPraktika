@@ -19,6 +19,7 @@ var textures = [
 func _ready():
 	my_json = Json.new()
 	my_json.load_file()
+	my_json.load_file2()
 	#print(my_json.data.map_seed)
 	$Player.texture = load(textures[1])
 	for i in 7 * my_json.data.difficulty:
@@ -41,8 +42,8 @@ func _physics_process(delta: float) -> void:
 func _on_resseter_body_entered(body: Node2D) -> void:
 	if body.name == "wall" :
 		body.queue_free()
-		if(score == 7 * my_json.data.difficulty + 4):
-			my_json.data2.win+=1
+		if(score == 7 * my_json.data.difficulty + 1):
+			my_json.data2.wins+=1
 			my_json.create_file2()
 			game_over()
 			
