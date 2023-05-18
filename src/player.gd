@@ -26,7 +26,7 @@ func Wall_reset():
 	var Wall_instance = Wall.instantiate()
 	var wall_pos = my_json.take_gen_val()
 	print(wall_pos)
-	Wall_instance.position = Vector2(1300,randi_range(150 + wall_pos * 20, 150 + wall_pos * 20))
+	Wall_instance.position = Vector2(1300,170 + wall_pos * 35)
 	get_parent().call_deferred("add_child",Wall_instance) 
 
 
@@ -40,7 +40,6 @@ func _on_resseter_body_entered(body: Node2D) -> void:
 func _on_detect_area_entered(area: Area2D) -> void:
 	if area.name == "pointarea":
 		score += 1
-		print(score);
 
 
 func _on_detect_body_entered(body: Node2D) -> void:
