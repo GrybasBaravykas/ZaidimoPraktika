@@ -39,8 +39,8 @@ func load_file2():
 	if not (FileAccess.file_exists(path2)):
 		create_file2()
 	var file = FileAccess.open(path2, FileAccess.READ)
-	data = file.get_as_text()
-	data = JSON.parse_string(data2)
+	data2 = file.get_as_text()
+	data2 = JSON.parse_string(data2)
 	
 func reset_data():
 	data2 = default_data2
