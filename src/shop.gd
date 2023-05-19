@@ -1,6 +1,6 @@
 extends Node
 var store = {
-			'selected' : 0,
+			'selected' : 1,
 }
 const Json = preload("res://map_gen_json.gd")
 var my_json: Json

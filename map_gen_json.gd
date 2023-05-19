@@ -8,7 +8,7 @@ var default_data = {
 	"map_seed" : 0
 }
 var default_data2 = {
-	"gold" : 100,
+	"gold" :0,
 	"exp" : 1,
 	"wins" : 0,
 	"loss" : 0,

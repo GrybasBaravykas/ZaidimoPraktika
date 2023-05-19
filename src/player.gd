@@ -45,6 +45,7 @@ func _on_resseter_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		if(score == 7 * my_json.data.difficulty + 1):
 			my_json.data2.wins+=1
+			my_json.data2.gold += 10 * my_json.data.difficulty
 			my_json.create_file2()
 			game_over()
 			
